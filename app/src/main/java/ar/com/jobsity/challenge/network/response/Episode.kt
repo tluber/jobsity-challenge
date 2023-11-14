@@ -1,5 +1,8 @@
 package ar.com.jobsity.challenge.network.response
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class Episode(
     val id: Int,
     val url: String,
@@ -11,4 +14,5 @@ data class Episode(
     val image: EpisodeImage?
 )
 
+@Serializable
 data class EpisodeImage(val medium: String, val original: String)

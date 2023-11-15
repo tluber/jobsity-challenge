@@ -1,23 +1,28 @@
 package ar.com.jobsity.challenge.network.response
 
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
 data class Show(
-    val id: Int,
-    val url: String,
-    val name: String,
-    val genres: List<String>,
-    val summary: String,
-    val image: ShowImage,
-    val schedule: ShowSchedule
+    @SerializedName("id") val id: Int,
+    @SerializedName("url") val url: String,
+    @SerializedName("name") val name: String,
+    @SerializedName("genres") val genres: List<String>,
+    @SerializedName("summary") val summary: String,
+    @SerializedName("image") val image: ShowImage,
+    @SerializedName("schedule") val schedule: ShowSchedule
 )
 
-@Serializable
-data class ShowImage(val medium: String, val original: String)
+data class ShowImage(
+    @SerializedName("medium") val medium: String,
+    @SerializedName("original") val original: String
+)
 
-@Serializable
-data class ShowSchedule(val time: String, val days: List<String>)
+data class ShowSchedule(
+    @SerializedName("time") val time: String,
+    @SerializedName("days") val days: List<String>
+)
 
-@Serializable
-data class SearchShow(val score: Long, val show: Show)
+data class SearchShow(
+    @SerializedName("score") val score: Long,
+    @SerializedName("show") val show: Show
+)

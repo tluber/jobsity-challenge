@@ -1,6 +1,7 @@
 package ar.com.jobsity.challenge
 
 import android.app.Application
+import com.facebook.drawee.backends.pipeline.Fresco
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 
@@ -14,6 +15,7 @@ class App : Application() {
                 super.log(priority, "SET", message, t)
             }
         })
+        Fresco.initialize(this)
     }
 
 }

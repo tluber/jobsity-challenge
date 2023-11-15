@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/blockRoundCorner">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/showImage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/itemViewShowHeight"
+            fresco:placeholderImage="@drawable/ic_movie_24"
+            fresco:failureImage="@drawable/ic_error_outline_24"
+            fresco:actualImageScaleType="focusCrop" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/showName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:lines="2"
+            android:maxLines="2"
+            android:textAlignment="center"
+            tools:text="@tools:sample/lorem/random" />
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

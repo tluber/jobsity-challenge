@@ -2,16 +2,14 @@ package ar.com.jobsity.challenge.network.di
 
 import ar.com.jobsity.challenge.BuildConfig
 import ar.com.jobsity.challenge.network.api.TvMazeApi
-import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import kotlinx.serialization.json.Json
-import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import timber.log.Timber
 import java.util.concurrent.TimeUnit
 import javax.inject.Named
@@ -36,7 +34,7 @@ object NetworkModule {
                     .connectTimeout(60, TimeUnit.SECONDS)
                     .build()
             )
-            .addConverterFactory(Json.asConverterFactory("application/json".toMediaType()))
+            .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
 

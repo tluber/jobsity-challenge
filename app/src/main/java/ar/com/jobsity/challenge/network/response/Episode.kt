@@ -1,18 +1,19 @@
 package ar.com.jobsity.challenge.network.response
 
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
 data class Episode(
-    val id: Int,
-    val url: String,
-    val name: String,
-    val season: Int,
-    val number: Int,
-    val genres: List<String>,
-    val summary: String,
-    val image: EpisodeImage?
+    @SerializedName("id") val id: Int,
+    @SerializedName("url") val url: String,
+    @SerializedName("name") val name: String,
+    @SerializedName("season") val season: Int,
+    @SerializedName("number") val number: Int,
+    @SerializedName("genres") val genres: List<String>,
+    @SerializedName("summary") val summary: String,
+    @SerializedName("image") val image: EpisodeImage?
 )
 
-@Serializable
-data class EpisodeImage(val medium: String, val original: String)
+data class EpisodeImage(
+    @SerializedName("medium") val medium: String,
+    @SerializedName("original") val original: String
+)

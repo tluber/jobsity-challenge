@@ -76,7 +76,8 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.6")
     implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2")
-    implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.google.code.gson:gson:2.9.0")
 
     // DataStore
     implementation("androidx.datastore:datastore-preferences-android:1.1.0-alpha05")
@@ -86,6 +87,9 @@ dependencies {
 
     //Timber
     implementation("com.jakewharton.timber:timber:5.0.1")
+
+    // Image Management Library: https://frescolib.org/
+    implementation("com.facebook.fresco:fresco:3.1.3")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

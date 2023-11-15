@@ -6,4 +6,6 @@
     <string name="toolbar_search">Search</string>
     <string name="toolbar_show_detail">Show</string>
     <string name="toolbar_episode_detail">Episode</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
 </resources>

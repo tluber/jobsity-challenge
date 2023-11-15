@@ -1,0 +1,73 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="x400">400dp</dimen>
+    <dimen name="x300">300dp</dimen>
+    <dimen name="x280">280dp</dimen>
+    <dimen name="x250">250dp</dimen>
+    <dimen name="x200">200dp</dimen>
+    <dimen name="x150">150dp</dimen>
+    <dimen name="x120">120dp</dimen>
+    <dimen name="x100">100dp</dimen>
+    <dimen name="x90">90dp</dimen>
+    <dimen name="x72">72dp</dimen>
+    <dimen name="x70">70dp</dimen>
+    <dimen name="x68">68dp</dimen>
+    <dimen name="x64">64dp</dimen>
+    <dimen name="x60">60dp</dimen>
+    <dimen name="x54">54dp</dimen>
+    <dimen name="x50">50dp</dimen>
+    <dimen name="x48">48dp</dimen>
+    <dimen name="x32">32dp</dimen>
+    <dimen name="x34">34dp</dimen>
+    <dimen name="x35">35dp</dimen>
+    <dimen name="x40">40dp</dimen>
+    <dimen name="x30">30dp</dimen>
+    <dimen name="x28">28dp</dimen>
+    <dimen name="x27">27dp</dimen>
+    <dimen name="x26">26dp</dimen>
+    <dimen name="x25">25dp</dimen>
+    <dimen name="x24">24dp</dimen>
+    <dimen name="x22">22dp</dimen>
+    <dimen name="x20">20dp</dimen>
+    <dimen name="x19">19dp</dimen>
+    <dimen name="x18">18dp</dimen>
+    <dimen name="x16">16dp</dimen>
+    <dimen name="x15">15dp</dimen>
+    <dimen name="x14">14dp</dimen>
+    <dimen name="x13">13dp</dimen>
+    <dimen name="x12">12dp</dimen>
+    <dimen name="x10">10dp</dimen>
+    <dimen name="x8">8dp</dimen>
+    <dimen name="x6">6dp</dimen>
+    <dimen name="x5">5dp</dimen>
+    <dimen name="x4">4dp</dimen>
+    <dimen name="x3">3dp</dimen>
+    <dimen name="x2">2dp</dimen>
+    <dimen name="x1">1dp</dimen>
+
+    <dimen name="s36">36sp</dimen>
+    <dimen name="s34">34sp</dimen>
+    <dimen name="s32">32sp</dimen>
+    <dimen name="s28">28sp</dimen>
+    <dimen name="s25">25sp</dimen>
+    <dimen name="s24">24sp</dimen>
+    <dimen name="s22">22sp</dimen>
+    <dimen name="s20">20sp</dimen>
+    <dimen name="s18">18sp</dimen>
+    <dimen name="s16">16sp</dimen>
+    <dimen name="s14">14sp</dimen>
+    <dimen name="s12">12sp</dimen>
+    <dimen name="s11">11sp</dimen>
+    <dimen name="s10">10sp</dimen>
+    <dimen name="s2">2sp</dimen>
+    <dimen name="s1">1sp</dimen>
+
+    <!-- Blocks sizes -->
+    <dimen name="blockRoundCorner">5dp</dimen>
+
+    <dimen name="itemViewShowHeight">180dp</dimen>
+
+</resources>

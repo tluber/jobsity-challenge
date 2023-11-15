@@ -61,12 +61,20 @@
         android:id="@+id/showDetailFragment"
         android:name="ar.com.jobsity.challenge.ui.detail.ShowDetailFragment"
         android:label="@string/toolbar_show_detail"
-        tools:layout="@layout/fragment_show_detail" />
+        tools:layout="@layout/fragment_show_detail">
+        <argument
+            android:name="show"
+            app:argType="ar.com.jobsity.challenge.network.response.Show" />
+    </fragment>
 
     <fragment
         android:id="@+id/episodeDetailFragment"
         android:name="ar.com.jobsity.challenge.ui.detail.EpisodeDetailFragment"
         android:label="@string/toolbar_episode_detail"
-        tools:layout="@layout/fragment_episode_detail" />
+        tools:layout="@layout/fragment_episode_detail">
+        <argument
+            android:name="episode"
+            app:argType="ar.com.jobsity.challenge.network.response.Episode" />
+    </fragment>
 
 </navigation>

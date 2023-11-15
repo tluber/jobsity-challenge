@@ -3,7 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("androidx.navigation.safeargs")
     id("com.google.dagger.hilt.android")
-    id("kotlinx-serialization")
+    id("kotlin-parcelize")
     kotlin("kapt")
 }
 
@@ -81,9 +81,6 @@ dependencies {
 
     // DataStore
     implementation("androidx.datastore:datastore-preferences-android:1.1.0-alpha05")
-
-    // Serialization
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
 
     //Timber
     implementation("com.jakewharton.timber:timber:5.0.1")

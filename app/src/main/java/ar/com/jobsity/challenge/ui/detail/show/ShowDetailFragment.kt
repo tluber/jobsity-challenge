@@ -20,7 +20,7 @@ import ar.com.jobsity.challenge.network.response.Episode
 import ar.com.jobsity.challenge.network.response.Season
 import ar.com.jobsity.challenge.network.response.toTriple
 import ar.com.jobsity.challenge.ui.views.adapters.EpisodeAdapter
-import ar.com.jobsity.challenge.utils.HorizontalSpaceItemDecoration
+import ar.com.jobsity.challenge.utils.decoration.HorizontalSpaceItemDecoration
 import ar.com.jobsity.challenge.utils.extensions.px
 import ar.com.jobsity.challenge.utils.extensions.removeHtmlTags
 import ar.com.jobsity.challenge.utils.spinner.SpinnerDialog
@@ -48,7 +48,7 @@ class ShowDetailFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        (activity as AppCompatActivity?)!!.supportActionBar!!.title = args.show.name
+        (activity as AppCompatActivity?)?.supportActionBar?.title = args.show.name
 
         args.show.apply {
             binding.showDetailImage.setImageURI(this.image?.original)
@@ -85,7 +85,6 @@ class ShowDetailFragment : Fragment() {
 
                             is SeasonsUiState.Success -> {
                                 //binding.loadingView.visibility = View.GONE
-                                //showAdapter.refresh(it.showList)
                                 seasons = it.seasonList
                                 if (it.seasonList.isNotEmpty()) {
                                     binding.seasonButton.text =

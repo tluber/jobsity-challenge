@@ -1,4 +1,4 @@
-package ar.com.jobsity.challenge.utils
+package ar.com.jobsity.challenge.utils.decoration
 
 import android.graphics.Rect
 import android.view.View

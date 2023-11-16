@@ -27,7 +27,7 @@ class EpisodeDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        (activity as AppCompatActivity?)!!.supportActionBar!!.title = args.episode.name
+        (activity as AppCompatActivity?)?.supportActionBar?.title = args.episode.name
         args.episode.apply {
             binding.episodeDetailImage.setImageURI(this.image?.original)
             binding.episodeName.text = this.name

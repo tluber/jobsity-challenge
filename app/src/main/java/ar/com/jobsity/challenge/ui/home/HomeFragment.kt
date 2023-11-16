@@ -16,7 +16,7 @@ import ar.com.jobsity.challenge.R
 import ar.com.jobsity.challenge.databinding.FragmentHomeBinding
 import ar.com.jobsity.challenge.network.response.Show
 import ar.com.jobsity.challenge.ui.views.adapters.ShowAdapter
-import ar.com.jobsity.challenge.utils.GridSpacingItemDecoration
+import ar.com.jobsity.challenge.utils.decoration.GridSpacingItemDecoration
 import ar.com.jobsity.challenge.utils.extensions.px
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.hilt.android.AndroidEntryPoint
@@ -47,6 +47,23 @@ class HomeFragment : Fragment() {
         binding.showList.layoutManager = GridLayoutManager(this.context, columns)
         binding.showList.addItemDecoration(GridSpacingItemDecoration(columns, 8.px, true))
         binding.showList.adapter = showAdapter
+
+        setUpListeners()
+        setUpObservers()
+    }
+
+    private fun setUpListeners() {
+        binding.nextButton.setOnClickListener {
+            currentPage++
+            viewModel.getShows(currentPage)
+        }
+        binding.previousButton.setOnClickListener {
+            currentPage--
+            viewModel.getShows(currentPage)
+        }
+    }
+
+    private fun setUpObservers() {
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 launch {
@@ -73,15 +90,6 @@ class HomeFragment : Fragment() {
                     }
                 }
             }
-        }
-
-        binding.nextButton.setOnClickListener {
-            currentPage++
-            viewModel.getShows(currentPage)
-        }
-        binding.previousButton.setOnClickListener {
-            currentPage--
-            viewModel.getShows(currentPage)
         }
     }
 

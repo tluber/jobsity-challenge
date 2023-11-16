@@ -13,6 +13,16 @@ class TvMazeRepository @Inject constructor(
     private val tvMazeApi: TvMazeApi
 ) {
 
+    /**
+     * Fetches a specific TV show from the TV Maze API based on the provided show ID.
+     *
+     * @param showId The unique identifier of the TV show to retrieve.
+     * @return A [Result] object containing either a [Show] on success or an [Exception] on failure.
+     * @throws Exception if there is a network error or an exception during the API call.
+     *
+     * This function is designed to be called from a coroutine. It suspends the current coroutine
+     * and performs the API call on the IO dispatcher using [withContext].
+     */
     suspend fun getShow(showId: Int): Result<Show> =
         withContext(Dispatchers.IO) {
             return@withContext try {
@@ -29,6 +39,16 @@ class TvMazeRepository @Inject constructor(
             }
         }
 
+    /**
+     * Fetches a list of TV shows from the TV Maze API.
+     *
+     * @param page The page number of the shows to retrieve. Default is 0.
+     * @return A [Result] object containing either a [List] of [Show] on success or an [Exception] on failure.
+     * @throws Exception if there is a network error or an exception during the API call.
+     *
+     * This function is designed to be called from a coroutine. It suspends the current coroutine
+     * and performs the API call on the IO dispatcher using [withContext].
+     */
     suspend fun getShows(page: Int = 0): Result<List<Show>> =
         withContext(Dispatchers.IO) {
             return@withContext try {
@@ -45,6 +65,16 @@ class TvMazeRepository @Inject constructor(
             }
         }
 
+    /**
+     * Fetches a list of episodes for a specific TV show from the TV Maze API based on the provided show ID.
+     *
+     * @param showId The unique identifier of the TV show for which to retrieve episodes.
+     * @return A [Result] object containing either a [List] of [Episode] on success or an [Exception] on failure.
+     * @throws Exception if there is a network error or an exception during the API call.
+     *
+     * This function is designed to be called from a coroutine. It suspends the current coroutine
+     * and performs the API call on the IO dispatcher using [withContext].
+     */
     suspend fun getEpisodes(showId: Int): Result<List<Episode>> =
         withContext(Dispatchers.IO) {
             return@withContext try {
@@ -61,6 +91,16 @@ class TvMazeRepository @Inject constructor(
             }
         }
 
+    /**
+     * Performs a search for TV shows using the TV Maze API based on the provided query.
+     *
+     * @param query The search query to find matching TV shows.
+     * @return A [Result] object containing either a [List] of [SearchShow] on success or an [Exception] on failure.
+     * @throws Exception if there is a network error or an exception during the API call.
+     *
+     * This function is designed to be called from a coroutine. It suspends the current coroutine
+     * and performs the API call on the IO dispatcher using [withContext].
+     */
     suspend fun searchShows(query: String): Result<List<SearchShow>> =
         withContext(Dispatchers.IO) {
             return@withContext try {
@@ -77,6 +117,16 @@ class TvMazeRepository @Inject constructor(
             }
         }
 
+    /**
+     * Fetches a list of seasons for a specific TV show from the TV Maze API based on the provided show ID.
+     *
+     * @param showId The unique identifier of the TV show for which to retrieve seasons.
+     * @return A [Result] object containing either a [List] of [Season] on success or an [Exception] on failure.
+     * @throws Exception if there is a network error or an exception during the API call.
+     *
+     * This function is designed to be called from a coroutine. It suspends the current coroutine
+     * and performs the API call on the IO dispatcher using [withContext].
+     */
     suspend fun getSeasons(showId: Int): Result<List<Season>> =
         withContext(Dispatchers.IO) {
             return@withContext try {
@@ -93,6 +143,16 @@ class TvMazeRepository @Inject constructor(
             }
         }
 
+    /**
+     * Fetches a list of episodes for a specific season from the TV Maze API based on the provided season ID.
+     *
+     * @param seasonId The unique identifier of the season for which to retrieve episodes.
+     * @return A [Result] object containing either a [List] of [Episode] on success or an [Exception] on failure.
+     * @throws Exception if there is a network error or an exception during the API call.
+     *
+     * This function is designed to be called from a coroutine. It suspends the current coroutine
+     * and performs the API call on the IO dispatcher using [withContext].
+     */
     suspend fun getEpisodesFromSeason(seasonId: Int): Result<List<Episode>> =
         withContext(Dispatchers.IO) {
             return@withContext try {

@@ -1,4 +1,4 @@
-package ar.com.jobsity.challenge.utils
+package ar.com.jobsity.challenge.utils.listeners
 
 import android.widget.SearchView
 import androidx.lifecycle.Lifecycle

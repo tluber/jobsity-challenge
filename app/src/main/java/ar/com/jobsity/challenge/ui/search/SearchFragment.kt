@@ -17,7 +17,7 @@ import ar.com.jobsity.challenge.R
 import ar.com.jobsity.challenge.databinding.FragmentSearchBinding
 import ar.com.jobsity.challenge.network.response.Show
 import ar.com.jobsity.challenge.ui.views.adapters.ShowAdapter
-import ar.com.jobsity.challenge.utils.GridSpacingItemDecoration
+import ar.com.jobsity.challenge.utils.decoration.GridSpacingItemDecoration
 import ar.com.jobsity.challenge.utils.extensions.px
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.hilt.android.AndroidEntryPoint

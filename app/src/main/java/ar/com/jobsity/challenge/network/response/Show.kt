@@ -11,7 +11,7 @@ data class Show(
     @SerializedName("name") val name: String,
     @SerializedName("genres") val genres: List<String>,
     @SerializedName("summary") val summary: String,
-    @SerializedName("image") val image: ShowImage,
+    @SerializedName("image") val image: ShowImage?,
     @SerializedName("schedule") val schedule: ShowSchedule
 ) : Parcelable
 
@@ -29,6 +29,6 @@ data class ShowSchedule(
 
 @Parcelize
 data class SearchShow(
-    @SerializedName("score") val score: Long,
+    @SerializedName("score") val score: Float,
     @SerializedName("show") val show: Show
 ) : Parcelable

@@ -51,7 +51,7 @@ class ShowDetailFragment : Fragment() {
         (activity as AppCompatActivity?)!!.supportActionBar!!.title = args.show.name
 
         args.show.apply {
-            binding.showDetailImage.setImageURI(this.image.original)
+            binding.showDetailImage.setImageURI(this.image?.original)
             binding.showTitle.text = this.name
             binding.genres.text = this.genres.joinToString()
             binding.schedule.text = "${this.schedule.days.joinToString()} - ${this.schedule.time}hs"

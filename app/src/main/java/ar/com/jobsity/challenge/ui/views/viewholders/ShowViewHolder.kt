@@ -16,7 +16,7 @@ class ShowViewHolder(private val binding: ItemShowBinding, onItemClicked: (Int) 
     fun bind(show: Show) {
 
         itemView.tag = show
-        binding.showImage.setImageURI(show.image.original)
+        binding.showImage.setImageURI(show.image?.original)
         binding.showName.text = show.name
     }
 }

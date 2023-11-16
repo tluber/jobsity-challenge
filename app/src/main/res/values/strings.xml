@@ -8,4 +8,14 @@
     <string name="toolbar_episode_detail">Episode</string>
     <string name="previous">Previous</string>
     <string name="next">Next</string>
+    <string name="page">Page</string>
+    <string name="genres">Genres</string>
+    <string name="summary">Summary</string>
+    <string name="episodes">Episodes</string>
+    <string name="episode">Episode</string>
+    <string name="season">Season</string>
+    <string name="seasons">Seasons</string>
+    <string name="schedule">Schedule</string>
+    <string name="error_title">An error has occurred</string>
+    <string name="accept">Accept</string>
 </resources>

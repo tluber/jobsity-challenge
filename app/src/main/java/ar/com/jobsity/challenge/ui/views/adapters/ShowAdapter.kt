@@ -1,4 +1,4 @@
-package ar.com.jobsity.challenge.ui.home
+package ar.com.jobsity.challenge.ui.views.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,8 +7,10 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import ar.com.jobsity.challenge.databinding.ItemShowBinding
 import ar.com.jobsity.challenge.network.response.Show
+import ar.com.jobsity.challenge.ui.views.viewholders.ShowViewHolder
 
-class ShowAdapter : RecyclerView.Adapter<ShowViewHolder>() {
+class ShowAdapter(private val onItemClick: (Show) -> Unit) :
+    RecyclerView.Adapter<ShowViewHolder>() {
 
     private val diffCallback = object : DiffUtil.ItemCallback<Show>() {
 
@@ -27,7 +29,9 @@ class ShowAdapter : RecyclerView.Adapter<ShowViewHolder>() {
         val binding =
             ItemShowBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
 
-        return ShowViewHolder(binding)
+        return ShowViewHolder(binding) {
+            onItemClick(differ.currentList[it])
+        }
     }
 
     override fun onBindViewHolder(viewHolder: ShowViewHolder, position: Int) {

@@ -2,6 +2,7 @@ package ar.com.jobsity.challenge.network.api
 
 import ar.com.jobsity.challenge.network.response.Episode
 import ar.com.jobsity.challenge.network.response.SearchShow
+import ar.com.jobsity.challenge.network.response.Season
 import ar.com.jobsity.challenge.network.response.Show
 import retrofit2.Response
 import retrofit2.http.GET
@@ -21,4 +22,10 @@ interface TvMazeApi {
 
     @GET("shows/{showId}/episodes")
     suspend fun getEpisodes(@Path("showId") showId: Int): Response<List<Episode>>
+
+    @GET("shows/{showId}/seasons")
+    suspend fun getSeasons(@Path("showId") showId: Int): Response<List<Season>>
+
+    @GET("seasons/{seasonId}/episodes")
+    suspend fun getEpisodesFromSeason(@Path("seasonId") seasonId: Int): Response<List<Episode>>
 }

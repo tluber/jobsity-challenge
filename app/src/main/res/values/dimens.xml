@@ -69,5 +69,9 @@
     <dimen name="blockRoundCorner">5dp</dimen>
 
     <dimen name="itemViewShowHeight">180dp</dimen>
+    <dimen name="detailShowHeight">300dp</dimen>
+
+    <dimen name="itemEpisodeHeight">150dp</dimen>
+    <dimen name="itemEpisodeWidth">210dp</dimen>
 
 </resources>

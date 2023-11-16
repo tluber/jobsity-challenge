@@ -9,4 +9,10 @@
     </style>
 
     <style name="Theme.JobsityChallenge" parent="Base.Theme.JobsityChallenge" />
+
+    <style name="DialogTheme" parent="Theme.Material3.DayNight.Dialog.Alert">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowMinWidthMajor">65%</item>
+        <item name="android:windowMinWidthMinor">95%</item>
+    </style>
 </resources>

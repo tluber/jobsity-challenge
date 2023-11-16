@@ -1,4 +1,4 @@
-package ar.com.jobsity.challenge.ui.detail
+package ar.com.jobsity.challenge.ui.detail.episode
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import ar.com.jobsity.challenge.databinding.FragmentEpisodeDetailBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class EpisodeDetailFragment : Fragment() {
 
     private lateinit var binding: FragmentEpisodeDetailBinding

@@ -59,7 +59,7 @@
 
     <fragment
         android:id="@+id/showDetailFragment"
-        android:name="ar.com.jobsity.challenge.ui.detail.ShowDetailFragment"
+        android:name="ar.com.jobsity.challenge.ui.detail.show.ShowDetailFragment"
         android:label="@string/toolbar_show_detail"
         tools:layout="@layout/fragment_show_detail">
         <argument
@@ -69,7 +69,7 @@
 
     <fragment
         android:id="@+id/episodeDetailFragment"
-        android:name="ar.com.jobsity.challenge.ui.detail.EpisodeDetailFragment"
+        android:name="ar.com.jobsity.challenge.ui.detail.episode.EpisodeDetailFragment"
         android:label="@string/toolbar_episode_detail"
         tools:layout="@layout/fragment_episode_detail">
         <argument

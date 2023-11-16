@@ -3,6 +3,7 @@ package ar.com.jobsity.challenge.data.repository
 import ar.com.jobsity.challenge.network.api.TvMazeApi
 import ar.com.jobsity.challenge.network.response.Episode
 import ar.com.jobsity.challenge.network.response.SearchShow
+import ar.com.jobsity.challenge.network.response.Season
 import ar.com.jobsity.challenge.network.response.Show
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -70,6 +71,38 @@ class TvMazeRepository @Inject constructor(
                     } ?: Result.failure(Exception("Network error ${searchShowsResponse.code()}"))
                 } else {
                     Result.failure(Exception("Network error ${searchShowsResponse.code()}"))
+                }
+            } catch (e: Exception) {
+                Result.failure(e)
+            }
+        }
+
+    suspend fun getSeasons(showId: Int): Result<List<Season>> =
+        withContext(Dispatchers.IO) {
+            return@withContext try {
+                val seasonsResponse = tvMazeApi.getSeasons(showId)
+                if (seasonsResponse.isSuccessful) {
+                    seasonsResponse.body()?.let {
+                        Result.success(it)
+                    } ?: Result.failure(Exception("Network error ${seasonsResponse.code()}"))
+                } else {
+                    Result.failure(Exception("Network error ${seasonsResponse.code()}"))
+                }
+            } catch (e: Exception) {
+                Result.failure(e)
+            }
+        }
+
+    suspend fun getEpisodesFromSeason(seasonId: Int): Result<List<Episode>> =
+        withContext(Dispatchers.IO) {
+            return@withContext try {
+                val seasonEpisodesResponse = tvMazeApi.getEpisodesFromSeason(seasonId)
+                if (seasonEpisodesResponse.isSuccessful) {
+                    seasonEpisodesResponse.body()?.let {
+                        Result.success(it)
+                    } ?: Result.failure(Exception("Network error ${seasonEpisodesResponse.code()}"))
+                } else {
+                    Result.failure(Exception("Network error ${seasonEpisodesResponse.code()}"))
                 }
             } catch (e: Exception) {
                 Result.failure(e)

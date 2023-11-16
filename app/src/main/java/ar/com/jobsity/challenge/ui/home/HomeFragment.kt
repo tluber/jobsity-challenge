@@ -10,10 +10,15 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import ar.com.jobsity.challenge.R
 import ar.com.jobsity.challenge.databinding.FragmentHomeBinding
+import ar.com.jobsity.challenge.network.response.Show
+import ar.com.jobsity.challenge.ui.views.adapters.ShowAdapter
 import ar.com.jobsity.challenge.utils.GridSpacingItemDecoration
 import ar.com.jobsity.challenge.utils.extensions.px
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -22,7 +27,9 @@ class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
     private val viewModel: HomeViewModel by viewModels()
-    private val showAdapter = ShowAdapter()
+    private val showAdapter = ShowAdapter {
+        navigateToDetailShow(it)
+    }
     private val columns = 3
     private var currentPage = 0
 
@@ -51,6 +58,7 @@ class HomeFragment : Fragment() {
 
                             is HomeUiState.Error -> {
                                 binding.loadingView.visibility = View.GONE
+                                showError(it.message)
                             }
 
                             is HomeUiState.Success -> {
@@ -58,7 +66,8 @@ class HomeFragment : Fragment() {
                                 showAdapter.refresh(it.showList)
                                 binding.previousButton.isEnabled = currentPage > 0
                                 val page = currentPage + 1
-                                binding.pageNumber.text = "Page $page"
+                                binding.pageNumber.text =
+                                    "${resources.getString(R.string.page)} $page"
                             }
                         }
                     }
@@ -74,5 +83,19 @@ class HomeFragment : Fragment() {
             currentPage--
             viewModel.getShows(currentPage)
         }
+    }
+
+    private fun navigateToDetailShow(show: Show) {
+        findNavController().navigate(HomeFragmentDirections.goToShowDetailFragment(show))
+    }
+
+    private fun showError(message: String) {
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle(resources.getString(R.string.error_title))
+            .setMessage(message)
+            .setPositiveButton(resources.getString(R.string.accept)) { dialogInterface, _ ->
+                dialogInterface.dismiss()
+            }
+            .show()
     }
 }

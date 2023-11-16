@@ -7,11 +7,9 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class Episode(
     @SerializedName("id") val id: Int,
-    @SerializedName("url") val url: String,
     @SerializedName("name") val name: String,
     @SerializedName("season") val season: Int,
     @SerializedName("number") val number: Int,
-    @SerializedName("genres") val genres: List<String>,
     @SerializedName("summary") val summary: String,
     @SerializedName("image") val image: EpisodeImage?
 ) : Parcelable

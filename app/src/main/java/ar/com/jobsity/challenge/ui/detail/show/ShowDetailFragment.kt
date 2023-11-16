@@ -11,10 +11,12 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import ar.com.jobsity.challenge.R
 import ar.com.jobsity.challenge.databinding.FragmentShowDetailBinding
+import ar.com.jobsity.challenge.network.response.Episode
 import ar.com.jobsity.challenge.network.response.Season
 import ar.com.jobsity.challenge.network.response.toTriple
 import ar.com.jobsity.challenge.ui.views.adapters.EpisodeAdapter
@@ -33,7 +35,7 @@ class ShowDetailFragment : Fragment() {
     private val viewModel: ShowDetailViewModel by viewModels()
     private val args: ShowDetailFragmentArgs by navArgs()
     private val episodeAdapter = EpisodeAdapter {
-        //navigateToDetailEpisode(it)
+        navigateToDetailEpisode(it)
     }
     private var seasons: List<Season> = listOf()
 
@@ -143,5 +145,9 @@ class ShowDetailFragment : Fragment() {
                 dialogInterface.dismiss()
             }
             .show()
+    }
+
+    private fun navigateToDetailEpisode(episode: Episode) {
+        findNavController().navigate(ShowDetailFragmentDirections.goToEpisodeDetailFragment(episode))
     }
 }

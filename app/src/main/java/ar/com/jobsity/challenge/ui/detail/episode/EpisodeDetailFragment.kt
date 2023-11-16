@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import ar.com.jobsity.challenge.databinding.FragmentEpisodeDetailBinding
+import ar.com.jobsity.challenge.utils.extensions.removeHtmlTags
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -27,5 +28,12 @@ class EpisodeDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         (activity as AppCompatActivity?)!!.supportActionBar!!.title = args.episode.name
+        args.episode.apply {
+            binding.episodeDetailImage.setImageURI(this.image?.original)
+            binding.episodeName.text = this.name
+            binding.episodeNumber.text = this.number.toString()
+            binding.seasonNumber.text = this.season.toString()
+            binding.summary.text = this.summary.removeHtmlTags()
+        }
     }
 }
